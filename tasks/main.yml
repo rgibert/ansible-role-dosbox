@@ -5,8 +5,6 @@
       package:
         name: dosbox
         state: present
-      become: true
-      become_user: root
 
     - name: create root working dir
       file:
@@ -25,5 +23,7 @@
         - f: dosbox.sh
           m: "0755"
 
+  become: yes
+  become_user: root
   tags:
     - dosbox
