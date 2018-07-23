@@ -9,6 +9,7 @@ Installs Dosbox
 ## Role Variables
 
 | Variable | Default | Description |
+|----------|---------|-------------|
 | dosbox_root | ~/.dosbox | Base working directory |
 | dosbox_config_autoexec_contents | "" | |
 | dosbox_config_cpu_core | auto | |
