@@ -1,0 +1,29 @@
+---
+- block:
+
+    - name: install dosbox
+      package:
+        name: dosbox
+        state: present
+      become: true
+      become_user: root
+
+    - name: create root working dir
+      file:
+        state: directory
+        path: "{{ dosbox_root }}"
+        mode: "0755"
+
+    - name: copy template files
+      template:
+        src: "templates/{{ item.f }}.j2"
+        dest: "{{ dosbox_root }}/{{ item.f }}"
+        mode: "{{ item.m }}"
+      with_items:
+        - f: dosbox.conf
+          m: "0644"
+        - f: dosbox.sh
+          m: "0755"
+
+  tags:
+    - dosbox
