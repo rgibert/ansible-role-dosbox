@@ -63,7 +63,7 @@ Installs Dosbox
 | dosbox_config_sdl_mapperfile | mapper-0.74.map | |
 | dosbox_config_sdl_output | surface | |
 | dosbox_config_sdl_priority | higher,normal | |
-| dosbox_config_sdl_usescancodes | | |
+| dosbox_config_sdl_usescancodes | "" | |
 | dosbox_config_sdl_sensitivity | 100 | |
 | dosbox_config_sdl_waitonerror | true | |
 | dosbox_config_sdl_windowresolution | original | |
