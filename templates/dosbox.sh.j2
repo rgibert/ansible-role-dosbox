@@ -1,3 +1,5 @@
 #!/bin/bash
 
-dosbox -conf {{ dosbox_root }}/dosbox.conf
+start_from=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
+
+dosbox -conf ${start_from}/dosbox.conf
