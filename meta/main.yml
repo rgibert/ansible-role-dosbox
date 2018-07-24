@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: dosbox
   author: Richard Gibert
   description: Dosbox
   license: GPLv3
