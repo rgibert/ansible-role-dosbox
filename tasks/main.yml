@@ -1,12 +1,34 @@
 ---
 - block:
 
-    - name: install dosbox
-      package:
-        name: dosbox
-        state: present
-      become: yes
-      become_user: root
+    - name: Handling non-Darwin OSes
+      block:
+
+        - name: Install dosbox
+          package:
+            name: dosbox
+            state: present
+          become: true
+
+        - name: Set binary name
+          set_fact:
+            dosbox_bin: dosbox
+
+      when: ansible_os_family != "Darwin"
+
+    - name: Handling Darwin OSes
+      block:
+
+        - name: Install dosbox-x
+          homebrew:
+            name: dosbox-x
+            state: present
+
+        - name: Set binary name
+          set_fact:
+            dosbox_bin: dosbox-x
+
+      when: ansible_os_family == "Darwin"
 
     - name: create root working dir
       file:
