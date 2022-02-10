@@ -1,5 +1,7 @@
+---
 galaxy_info:
   role_name: dosbox
+  namespace: rgibert
   author: Richard Gibert
   description: Dosbox
   license: GPLv3

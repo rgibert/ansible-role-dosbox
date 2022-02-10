@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts:
+    - all
+  roles:
+    - role: rgibert.dosbox
+      dosbox_root: ~/.local/share/dosbox
