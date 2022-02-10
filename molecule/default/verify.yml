@@ -1,0 +1,32 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: "check package installed"
+      package:
+        name: dosbox
+      check_mode: true
+      register: check_package
+
+    - name: "check conf file"
+      file:
+        path: "~/.local/share/dosbox/dosbox.conf"
+        mode: "0644"
+      check_mode: true
+      register: check_conf_file
+
+    - name: "check sh file"
+      file:
+        path: "~/.local/share/dosbox/dosbox.sh"
+        mode: "0755"
+      check_mode: true
+      register: check_sh_file
+
+    - name: "enforce assertions"
+      assert:
+        that:
+          - not {{ item }}.changed
+      with_items:
+        - check_package
+        - check_conf_file
+        - check_sh_file

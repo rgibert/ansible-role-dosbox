@@ -1,5 +1,5 @@
 ---
-dosbox_root:  ~/.dosbox
+dosbox_root: "~/.local/share/dosbox"
 dosbox_config_autoexec_contents: ""
 dosbox_config_cpu_core: auto
 dosbox_config_cpu_cputype: auto
